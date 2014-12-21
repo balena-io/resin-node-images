@@ -1,4 +1,4 @@
-FROM resin/rpi-node:0.10.22
+FROM resin/rpi-node:0.10.28
 
 RUN mkdir -p /app
 WORKDIR /app
