@@ -18,6 +18,7 @@ RUN	cd /tmp && \
 	CXX="g++ -Wno-unused-local-typedefs" make && \
 	CXX="g++ -Wno-unused-local-typedefs" make install && \
 	cd /tmp && \
-	rm -rf /tmp/node-v*
+	rm -rf /tmp/node-v* && \
+	npm install -g npm
 	
 CMD [ "/bin/bash", "-c" ]
