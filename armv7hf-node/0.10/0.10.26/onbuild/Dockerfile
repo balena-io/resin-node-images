@@ -1,0 +1,9 @@
+FROM resin/armv7hf-node:0.10.26
+
+RUN mkdir -p /app
+WORKDIR /app
+
+ONBUILD COPY . /app
+ONBUILD RUN npm install --unsafe-perm
+
+CMD [ "npm", "start" ]
