@@ -1,4 +1,4 @@
-FROM resin/aeaglebone-black-debian:wheezy
+FROM resin/beaglebone-black-debian:wheezy
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV NODE_VERSION 0.11.12
