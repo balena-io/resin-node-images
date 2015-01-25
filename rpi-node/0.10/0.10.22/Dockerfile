@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y \
 							build-essential \
 							wget \
 							python \
-							python-dev \
+							python-dev --no-install-recommends\
 					&& apt-get clean \
 					&& rm -rf /var/lib/apt/lists
 
@@ -16,9 +16,9 @@ RUN	cd /tmp && \
 	tar xvzf node-v$NODE_VERSION.tar.gz && \
 	rm -f node-v$NODE_VERSION.tar.gz && \
 	cd node-v* && \
-	./configure && \
-	CXX="g++ -Wno-unused-local-typedefs" make && \
-	CXX="g++ -Wno-unused-local-typedefs" make install && \
+	./configure --without-snapshot && \
+	make && \
+	make install && \
 	cd /tmp && \
 	rm -rf /tmp/node-v* && \
 	npm install -g npm
