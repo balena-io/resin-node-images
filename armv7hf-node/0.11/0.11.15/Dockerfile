@@ -16,7 +16,7 @@ RUN	cd /tmp \
 	&& wget -O- --quiet http://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION.tar.gz | tar xz \
 	&& cd node-v$NODE_VERSION \
 	&& ./configure --without-snapshot \
-	&& make \
+	&& make -j $(nproc) \
 	&& make install \
 	&& cd /tmp \
 	&& rm -rf /tmp/node-v$NODE_VERSION \
